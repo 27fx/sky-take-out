@@ -60,7 +60,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         if (employee.getStatus() == StatusConstant.DISABLE) {
             //账号被锁定
-            throw new AccountLockedException(MessageConstant.ACCOUNT_LOCKED);
+             throw new AccountLockedException(MessageConstant.ACCOUNT_LOCKED);
         }
 
         //3、返回实体对象
@@ -73,18 +73,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee=new Employee();
         BeanUtils.copyProperties(employeeDTO,employee);
 
-        employee.setStatus(StatusConstant.ENABLE);
+         employee.setStatus(StatusConstant.ENABLE);
          employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
-         employee.setCreateTime(LocalDateTime.now());
-         employee.setUpdateTime(LocalDateTime.now());
+         //employee.setCreateTime(LocalDateTime.now());
+         //employee.setUpdateTime(LocalDateTime.now());
 
 
 
 
 
-         employee.setUpdateUser(BaseContext.getCurrentId());
-         employee.setCreateUser(BaseContext.getCurrentId());
+         //employee.setUpdateUser(BaseContext.getCurrentId());
+         //employee.setCreateUser(BaseContext.getCurrentId());
 
 
 
@@ -133,8 +133,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
+        //employee.setUpdateTime(LocalDateTime.now());
+        //employee.setUpdateUser(BaseContext.getCurrentId());
 
 
         employeeMapper.update(employee);
