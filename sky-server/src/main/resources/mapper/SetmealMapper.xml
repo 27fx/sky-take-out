@@ -44,6 +44,12 @@ update setmeal
 
 
     </update>
+    <delete id="deleteByIds">
+        delete from setmeal where id in
+                            <foreach collection="ids" open="(" separator="," item="id" close=")">
+                                #{id}
+                            </foreach>
+    </delete>
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
             select  s.*  ,c.name categoryName
             from setmeal s

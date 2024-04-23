@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 @Mapper
 public interface SetmealMapper {
 
@@ -32,4 +34,11 @@ public interface SetmealMapper {
 
     //分页查询
     Page<SetmealVO> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
+
+
+
+    @Select("select * from setmeal where id=#{id}")
+    Setmeal getById(Long id);
+
+    void deleteByIds(List<Long> ids);
 }
