@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -65,6 +66,8 @@ public class SetmealServiceImpl implements SetmealService {
         return new PageResult(page.getTotal(),page.getResult());
     }
 
+
+    @Transactional
     @Override
     public void deleteBatch(List<Long> ids) {
 
@@ -91,6 +94,8 @@ public class SetmealServiceImpl implements SetmealService {
         return setmealVO;
     }
 
+
+    @Transactional
     @Override
     public void update(SetmealDTO setmealDTO) {
         Setmeal setmeal=new Setmeal();
