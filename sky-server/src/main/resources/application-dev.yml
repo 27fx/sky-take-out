@@ -11,5 +11,10 @@ sky:
     access-key-id: LTAI5tB1iSVAgR6fzj5LDJ8H
     bucket-name: sky-take-out-27fx
     endpoint: oss-cn-hangzhou.aliyuncs.com
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 10
 
 
