@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Update;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface OrderMapper {
@@ -62,4 +63,6 @@ public interface OrderMapper {
     @Select("select id from orders where number=#{number}")
 
     Long getIdByNumber(String number);
+
+    Double sumByMap(Map map);
 }
